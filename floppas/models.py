@@ -1,14 +1,30 @@
 from django.db import models
 
-class User(models.Model):
-    username = models.CharField(max_length=50, unique=True)
-    image = models.CharField(max_length=500)
-    age = models.IntegerField()
-    location = models.CharField(max_length=50)
-    interests = models.CharField(max_length=300)
-    catnip = models.BooleanField()
-    liked_users = models.IntegerField(default=None, null=True, blank=True)
-    liked_by = models.IntegerField(default=None, null=True, blank=True)
+class Chat(models.Model):
+    user_one = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='active_chats',
+        on_delete=models.CASCADE
+    )
+    user_two = models.IntegerField()
 
     def __str__(self):
-        return f'Username: {self.username}, User ID: {self.id}'
+        return f'User 1: {self.user_id} - User 2: {self.matched_user}'
+
+
+class Message(models.Model):
+    text = models.CharField(max_length= 1000)
+    parent_chat = models.ForeignKey(
+        Chat,
+        related_name='messages_in_chat',
+        on_delete=models.CASCADE
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    sender = models.ForeignKey(
+        'jwt_auth.User',
+        related_name='sent_messages',
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return f'{self.id} - {self.created_at}'
