@@ -9,8 +9,16 @@ class User(AbstractUser):
     location = models.CharField(max_length=50, blank=True, null=True)
     interests = models.CharField(max_length=300, blank=True)
     catnip = models.BooleanField(blank=True, null=True)
-    liked_users = models.IntegerField(default=None, null=True, blank=True)
-    liked_by = models.IntegerField(default=None, null=True, blank=True)
+    liked_users = models.ManyToManyField(
+        'jwt_auth.User',
+        related_name='liked_by',
+        blank=True
+        )
+    # liked_by = models.ManyToManyField(
+    #     'jwt_auth.User',
+    #     related_name='liked_users',
+    #     blank=True
+    #     )
 
     def __str__(self):
         return f'Username: {self.username}, User ID: {self.id}'

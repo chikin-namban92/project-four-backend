@@ -4,24 +4,25 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$q6yDuod4iwU7j5lvQ44K1O$Qg6pF3jtXae8DRZxM517FriHrkFOV2VJUnLxG8KTxtA=",
-    "last_login": "2021-09-09T18:52:16.181Z",
+    "last_login": "2021-09-10T13:50:54Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
     "last_name": "",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2021-09-09T18:51:59.482Z",
+    "date_joined": "2021-09-09T18:51:59Z",
     "email": "admin@email.com",
     "image": null,
     "age": null,
     "location": null,
     "interests": "",
     "catnip": null,
-    "liked_users": null,
-    "liked_by": null,
     "groups": [],
-    "user_permissions": []
+    "user_permissions": [],
+    "liked_users": [
+      3
+    ]
   }
 },
 {
@@ -43,10 +44,9 @@
     "location": "Russia",
     "interests": "Sleeping",
     "catnip": true,
-    "liked_users": null,
-    "liked_by": null,
     "groups": [],
-    "user_permissions": []
+    "user_permissions": [],
+    "liked_users": []
   }
 },
 {
@@ -68,10 +68,11 @@
     "location": "Russia",
     "interests": "Memes",
     "catnip": true,
-    "liked_users": null,
-    "liked_by": null,
     "groups": [],
-    "user_permissions": []
+    "user_permissions": [],
+    "liked_users": [
+      1
+    ]
   }
 },
 {
@@ -93,10 +94,33 @@
     "location": "Russia",
     "interests": "Floppas",
     "catnip": true,
-    "liked_users": null,
-    "liked_by": null,
     "groups": [],
-    "user_permissions": []
+    "user_permissions": [],
+    "liked_users": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "FLOPPA",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "flopppppa@email.com",
+    "image": "url",
+    "age": null,
+    "location": null,
+    "interests": "",
+    "catnip": null,
+    "groups": [],
+    "user_permissions": [],
+    "liked_users": []
   }
 }
 ]

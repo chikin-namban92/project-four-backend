@@ -1,6 +1,6 @@
 from rest_framework import fields, serializers, status
 from django.contrib.auth import get_user_model
-# import django.contrib.auth.password_validation as validation
+import django.contrib.auth.password_validation as validation
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
 from floppas.serializers import LikedUserSerilizer, MessageIdSerializer, MessageSerializer, PopulatedMessageSerializer
@@ -19,10 +19,10 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         if password != password_confirmation:
             raise ValidationError({'password_confirmation': 'does not match'})
 
-        # try:
-        #     validation.validate_password(password=password)
-        # except ValidationError as err:
-        #     raise ValidationError({'password': err.messages})
+        try:
+            validation.validate_password(password=password)
+        except ValidationError as err:
+            raise ValidationError({'password': err.messages})
 
         data['password'] = make_password(password)
 

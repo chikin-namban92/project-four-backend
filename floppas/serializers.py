@@ -12,7 +12,7 @@ class NestedUserSerializer(serializers.ModelSerializer):
 class LikedUserSerilizer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = 'id'
+        fields = ('id', 'username')
 
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:

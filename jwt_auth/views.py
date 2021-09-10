@@ -1,10 +1,9 @@
 from datetime import datetime, timedelta
 import rest_framework
-from rest_framework import serializers
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.exceptions import PermissionDenied
-# from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import NotFound, PermissionDenied
 from rest_framework import status
 from django.contrib.auth import get_user_model
 from django.conf import settings
@@ -62,3 +61,20 @@ class UserListView(APIView):
         users = User.objects.all()
         serialized = UserProfileSerializer(users, many=True)
         return Response(serialized.data, status=status.HTTP_200_OK)
+
+class UserLikeView(APIView):
+    ''' Adds user to liked_users and vice versa and removes if already liked '''
+    permission_classes = (IsAuthenticated, )
+
+    def post(self, request, user_pk):
+        try:
+            user_to_like = User.objects.get(pk=user_pk)
+        except User.DoesNotExist:
+            raise NotFound()
+
+        if request.user in user_to_like.liked_by.all():
+            user_to_like.liked_by.remove(request.user.id)
+        else:
+            user_to_like.liked_by.add(request.user.id)
+
+        return Response(status=status.HTTP_202_ACCEPTED)
