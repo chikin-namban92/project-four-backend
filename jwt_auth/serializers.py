@@ -1,9 +1,9 @@
-from rest_framework import serializers, status
+from rest_framework import fields, serializers, status
 from django.contrib.auth import get_user_model
 # import django.contrib.auth.password_validation as validation
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
-from floppas.serializers import MessageSerializer
+from floppas.serializers import LikedUserSerilizer, MessageIdSerializer, MessageSerializer, PopulatedMessageSerializer
 
 User = get_user_model()
 
@@ -33,4 +33,9 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    sent_messages = MessageSerializer()
+    sent_messages = MessageIdSerializer(many=True)
+    liked_users = LikedUserSerilizer(many=True)
+    liked_by = LikedUserSerilizer(many=True)
+    class Meta:
+        model = User
+        fields = '__all__'

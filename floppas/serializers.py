@@ -9,13 +9,23 @@ class NestedUserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'image')
 
+class LikedUserSerilizer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = 'id'
+
 class MessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Message
         fields = '__all__'
 
 class PopulatedMessageSerializer(MessageSerializer):
-    sender = NestedUserSerializer()
+    sender_id = NestedUserSerializer()
+
+class MessageIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Message
+        fields = ('id', 'text')
 
 class ChatSerializer(serializers.ModelSerializer):
     messages_in_chat = PopulatedMessageSerializer(many=True, read_only=True)
