@@ -1,15 +1,15 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 
 class Chat(models.Model):
-    user_one = models.ForeignKey(
+    matched_users = models.ManyToManyField(
         'jwt_auth.User',
         related_name='active_chats',
-        on_delete=models.CASCADE
+        blank=True
     )
-    user_two = models.IntegerField()
 
     def __str__(self):
-        return f'User 1: {self.user_id} - User 2: {self.matched_user}'
+        return f'Chat {self.id}: {self.matched_users}'
 
 
 class Message(models.Model):
@@ -17,7 +17,7 @@ class Message(models.Model):
     parent_chat = models.ForeignKey(
         Chat,
         related_name='messages_in_chat',
-        on_delete=models.CASCADE
+        on_delete=CASCADE
     )
     created_at = models.DateTimeField(auto_now_add=True)
     sender = models.ForeignKey(

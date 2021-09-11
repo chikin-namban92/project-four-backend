@@ -14,11 +14,6 @@ class User(AbstractUser):
         related_name='liked_by',
         blank=True
         )
-    # liked_by = models.ManyToManyField(
-    #     'jwt_auth.User',
-    #     related_name='liked_users',
-    #     blank=True
-    #     )
 
     def __str__(self):
         return f'Username: {self.username}, User ID: {self.id}'

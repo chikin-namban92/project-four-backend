@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-import rest_framework
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -8,6 +7,8 @@ from rest_framework import status
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
+
+from floppas.models import Chat
 
 from .serializers import UserProfileSerializer, UserRegisterSerializer
 User = get_user_model()
@@ -76,5 +77,13 @@ class UserLikeView(APIView):
             user_to_like.liked_by.remove(request.user.id)
         else:
             user_to_like.liked_by.add(request.user.id)
+
+        if (
+            request.user in user_to_like.liked_by.all()
+            ) and (
+                request.user in user_to_like.liked_users.all()
+                ):
+            chat_to_create = Chat.objects.create()
+            chat_to_create.matched_users.add(request.user.id, user_to_like)
 
         return Response(status=status.HTTP_202_ACCEPTED)

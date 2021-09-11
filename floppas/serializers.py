@@ -29,9 +29,8 @@ class MessageIdSerializer(serializers.ModelSerializer):
 
 class ChatSerializer(serializers.ModelSerializer):
     messages_in_chat = PopulatedMessageSerializer(many=True, read_only=True)
-    user_one_id = NestedUserSerializer()
-    user_two = NestedUserSerializer()
+    matched_users = NestedUserSerializer(many=True)
 
     class Meta:
-        model: Chat
+        model = Chat
         fields = '__all__'

@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 import django.contrib.auth.password_validation as validation
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
-from floppas.serializers import LikedUserSerilizer, MessageIdSerializer, MessageSerializer, PopulatedMessageSerializer
+from floppas.serializers import ChatSerializer, LikedUserSerilizer, MessageIdSerializer
 
 User = get_user_model()
 
@@ -36,6 +36,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
     sent_messages = MessageIdSerializer(many=True)
     liked_users = LikedUserSerilizer(many=True)
     liked_by = LikedUserSerilizer(many=True)
+    active_chats = ChatSerializer(many=True)
     class Meta:
         model = User
         fields = '__all__'
