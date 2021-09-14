@@ -1,3 +1,13 @@
 {
-  "python.linting.pylintEnabled": true
+  "python.linting.pylintEnabled": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#dd77cc",
+    "titleBar.activeBackground": "#dd77cc",
+    "titleBar.inactiveBackground": "#dd77cc",
+    "titleBar.inactiveForeground": "#000000",
+    "titleBar.activeForeground": "#000000",
+    "statusBar.foreground": "#000000",
+
+  },
+  "window.title": "Find Floppas - SERVER"
 }

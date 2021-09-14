@@ -57,7 +57,9 @@ class LoginView(APIView):
 #         serialized_user = UserProfileSerializer(request.user)
 #         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
-class UserListView(APIView):
+class UserListView(APIView):    
+    permission_classes = (IsAuthenticated, )
+
     def get(self, _request):
         users = User.objects.all()
         serialized = UserProfileSerializer(users, many=True)

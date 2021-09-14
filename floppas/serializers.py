@@ -7,7 +7,12 @@ User = get_user_model()
 class NestedUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'username', 'image')
+        fields = ('id', 'username', 'image', )
+
+class NestedUserIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', )
 
 class LikedUserSerilizer(serializers.ModelSerializer):
     class Meta:
@@ -20,7 +25,7 @@ class MessageSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PopulatedMessageSerializer(MessageSerializer):
-    sender_id = NestedUserSerializer()
+    sender = NestedUserIdSerializer()
 
 class MessageIdSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,7 +33,7 @@ class MessageIdSerializer(serializers.ModelSerializer):
         fields = ('id', 'text')
 
 class ChatSerializer(serializers.ModelSerializer):
-    messages_in_chat = PopulatedMessageSerializer(many=True, read_only=True)
+    messages_in_chat = MessageSerializer(many=True, read_only=True)
     matched_users = NestedUserSerializer(many=True)
 
     class Meta:
