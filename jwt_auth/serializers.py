@@ -33,7 +33,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    sent_messages = MessageIdSerializer(many=True)
+    # sent_messages = MessageIdSerializer(many=True)
     liked_users = LikedUserSerilizer(many=True)
     liked_by = LikedUserSerilizer(many=True)
     active_chats = ChatSerializer(many=True)

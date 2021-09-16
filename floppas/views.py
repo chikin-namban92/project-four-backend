@@ -1,12 +1,12 @@
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.generics import (ListCreateAPIView)
+from rest_framework.generics import (ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView)
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from jwt_auth.models import User
 
-from floppas.serializers import ChatSerializer, MessageSerializer, NestedUserSerializer, PopulatedMessageSerializer
-from floppas.models import Chat
+from floppas.serializers import ChatSerializer, MessageSerializer
+from floppas.models import Chat, Message
 
 class ChatListView(ListCreateAPIView):
 
@@ -19,14 +19,10 @@ class ChatListView(ListCreateAPIView):
 
 # class ChatDetailView(RetrieveAPIView):
 #     ''' Detail View for /characters/id SHOW UPDATE DELETE'''
+#     queryset = Chat.objects.all()
+#     serializer_class = ChatSerializer
 #     permission_classes = (IsAuthenticated, )
 
-#     def get(self, request, chat_pk):
-#         request.data['chat'] = chat_pk
-#         serialized_chat = ChatSerializer(request.chat)
-#         return Response(serialized_chat)
-
-        
 
 class UserMatchView(APIView):
 
@@ -43,7 +39,7 @@ class UserUnmatchView(APIView):
         liked_user = User.objects.get(pk=user_pk)
         self.matched_users.remove(request.user.id, liked_user)
 
-class MessageListView(APIView):
+class MessagePostView(APIView):
     ''' List / Create View for Messages '''
 
     permission_classes = (IsAuthenticated, )
@@ -59,3 +55,12 @@ class MessageListView(APIView):
             created_message.errors,
             status=status.HTTP_422_UNPROCESSABLE_ENTITY
             )
+
+class MessageListView(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    def get (self, request):
+        messages = Message.objects.all()
+        serialized = MessageSerializer(messages, many=True)
+        return Response(serialized.data, status=status.HTTP_200_OK)
+

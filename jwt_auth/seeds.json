@@ -13,11 +13,11 @@
     "is_active": true,
     "date_joined": "2021-09-09T18:51:59Z",
     "email": "admin@email.com",
-    "image": null,
-    "age": null,
-    "location": null,
-    "interests": "",
-    "catnip": null,
+    "image": "https://i.redd.it/ggplialogdy61.png",
+    "age": 500,
+    "location": "FindFloppas.com",
+    "interests": "Banning Unruly Floppas",
+    "catnip": false,
     "groups": [],
     "user_permissions": [],
     "liked_users": []
@@ -30,21 +30,23 @@
     "password": "pass",
     "last_login": null,
     "is_superuser": false,
-    "username": "bigfloppa420",
+    "username": "JustAnotherFloppa",
     "first_name": "",
     "last_name": "",
     "is_staff": false,
     "is_active": true,
     "date_joined": "2021-09-09T18:52:17Z",
     "email": "floppa@email.com",
-    "image": "https://static.wikia.nocookie.net/floppapedia-revamped/images/9/96/Floppa.jpg/revision/latest?cb=20210223180751",
+    "image": "https://img-9gag-fun.9cache.com/photo/aGpgreX_700b.jpg",
     "age": 8,
     "location": "Russia",
     "interests": "Sleeping",
     "catnip": true,
     "groups": [],
     "user_permissions": [],
-    "liked_users": []
+    "liked_users": [
+      1
+    ]
   }
 },
 {
@@ -94,7 +96,9 @@
     "catnip": true,
     "groups": [],
     "user_permissions": [],
-    "liked_users": []
+    "liked_users": [
+      1
+    ]
   }
 },
 {
@@ -111,14 +115,166 @@
     "is_active": true,
     "date_joined": "2021-09-10T13:34:53.586Z",
     "email": "flopppppa@email.com",
-    "image": "url",
+    "image": "https://pbs.twimg.com/profile_images/1368300327024402432/OPuYdhyt_400x400.jpg",
     "age": null,
     "location": null,
     "interests": "",
     "catnip": null,
     "groups": [],
     "user_permissions": [],
+    "liked_users": [
+      1
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "The_Flop_of_WallStreet",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "theflop@email.com",
+    "image": "https://res.cloudinary.com/dodgizm5d/image/upload/v1631739596/find-floppas/lngbccvzb2um8djvqdou.jpg",
+    "age": 10,
+    "location": "Wall Street",
+    "interests": "Stonks",
+    "catnip": true,
+    "groups": [],
+    "user_permissions": [],
+    "liked_users": [
+      1
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "KFC",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "colonelsanders@email.com",
+    "image": "https://res.cloudinary.com/dodgizm5d/image/upload/v1631739424/find-floppas/mjqpgpvdjthnvhiomlvb.jpg",
+    "age": 10,
+    "location": "Kentucky",
+    "interests": "Deep Fried Everything",
+    "catnip": true,
+    "groups": [],
+    "user_permissions": [],
     "liked_users": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "yungfloppa",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "donk@email.com",
+    "image": "https://res.cloudinary.com/dodgizm5d/image/upload/v1631738861/find-floppas/m40jpj4daiykz8edt1rx.jpg",
+    "age": 100,
+    "location": "Russia",
+    "interests": "Donk",
+    "catnip": true,
+    "groups": [],
+    "user_permissions": [],
+    "liked_users": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "PS1-Floppa",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "ps1@email.com",
+    "image": "https://preview.redd.it/6spp7duchqi61.jpg?width=960&crop=smart&auto=webp&s=0692e38f7f91878a6cb5c4b7647d915360d7fcf5",
+    "age": 30,
+    "location": "The Internet",
+    "interests": "Retro Video Games",
+    "catnip": false,
+    "groups": [],
+    "user_permissions": [],
+    "liked_users": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "DenchFloppa",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "dench@email.com",
+    "image": "https://i.redd.it/d5uh9juguqo61.jpg",
+    "age": 20,
+    "location": "The Internet",
+    "interests": "Powerlifting",
+    "catnip": false,
+    "groups": [],
+    "user_permissions": [],
+    "liked_users": [
+      1
+    ]
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$CoGFiEtlAaytuwZiCnRfYG$nzXI6LW7bakqWsXjSMLz2qHa9H6oHf43vtCNgbLA1YI=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "NotAFloppa",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-09-10T13:34:53.586Z",
+    "email": "tiger@email.com",
+    "image": "https://ichef.bbci.co.uk/news/976/cpsprodpb/5B67/production/_113699332_0ef4e0f5-e724-447e-b921-1b0bf3d51c7c.jpg",
+    "age": 8,
+    "location": "Russia",
+    "interests": "Floppas",
+    "catnip": false,
+    "groups": [],
+    "user_permissions": [],
+    "liked_users": [
+      1
+    ]
   }
 }
 ]
