@@ -1,9 +1,9 @@
-from rest_framework import fields, serializers, status
+from rest_framework import serializers
 from django.contrib.auth import get_user_model
 import django.contrib.auth.password_validation as validation
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
-from floppas.serializers import ChatSerializer, LikedUserSerilizer, MessageIdSerializer, MessageSerializer
+from floppas.serializers import ChatSerializer, LikedUserSerilizer, MessageIdSerializer
 
 User = get_user_model()
 
