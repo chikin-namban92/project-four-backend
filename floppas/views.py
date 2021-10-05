@@ -17,12 +17,6 @@ class ChatListView(ListCreateAPIView):
         serialized = ChatSerializer(chats, many=True)
         return Response(serialized.data, status=status.HTTP_200_OK)
 
-# class ChatDetailView(RetrieveAPIView):
-#     ''' Detail View for /characters/id SHOW UPDATE DELETE'''
-#     queryset = Chat.objects.all()
-#     serializer_class = ChatSerializer
-#     permission_classes = (IsAuthenticated, )
-
 
 class UserMatchView(APIView):
 
