@@ -53,7 +53,7 @@ class MessagePostView(APIView):
 class MessageListView(APIView):
     permission_classes = (IsAuthenticated, )
 
-    def get (self, request):
+    def get (self, _request):
         messages = Message.objects.all()
         serialized = MessageSerializer(messages, many=True)
         return Response(serialized.data, status=status.HTTP_200_OK)
