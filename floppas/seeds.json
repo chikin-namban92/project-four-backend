@@ -3,142 +3,60 @@
   "model": "floppas.chat",
   "pk": 2,
   "fields": {
-    "user_one": 1,
-    "user_two": 2
+    "matched_users": [
+      1,
+      2
+    ]
   }
 },
 {
   "model": "floppas.chat",
   "pk": 3,
   "fields": {
-    "user_one": 2,
-    "user_two": 4
-  }
-},
-{
-  "model": "floppas.chat",
-  "pk": 4,
-  "fields": {
-    "user_one": 1,
-    "user_two": 3
-  }
-},
-{
-  "model": "floppas.chat",
-  "pk": 5,
-  "fields": {
-    "user_one": 5,
-    "user_two": 2
+    "matched_users": [
+      8,
+      1
+    ]
   }
 },
 {
   "model": "floppas.message",
-  "pk": 4,
+  "pk": 1,
   "fields": {
-    "text": "Hello",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 1
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 5,
-  "fields": {
-    "text": "Yo",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 2
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 6,
-  "fields": {
-    "text": "greetings",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 2
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 7,
-  "fields": {
-    "text": "hi",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 1
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 8,
-  "fields": {
-    "text": "Hello",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 1
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 9,
-  "fields": {
-    "text": "Yo",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 2
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 10,
-  "fields": {
-    "text": "greetings",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 2
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 11,
-  "fields": {
-    "text": "hi",
-    "parent_chat": 2,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 1
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 12,
-  "fields": {
-    "text": "Hello",
+    "text": "hello",
     "parent_chat": 3,
-    "created_at": "2021-10-08T23:00:00Z",
+    "created_at": "2024-03-20T21:45:23.755Z",
+    "sender": 1
+  }
+},
+{
+  "model": "floppas.message",
+  "pk": 2,
+  "fields": {
+    "text": "yo",
+    "parent_chat": 2,
+    "created_at": "2024-03-20T21:45:37.495Z",
+    "sender": 1
+  }
+},
+{
+  "model": "floppas.message",
+  "pk": 3,
+  "fields": {
+    "text": "greetings fellow floppa",
+    "parent_chat": 2,
+    "created_at": "2024-03-20T21:47:23.837Z",
     "sender": 2
   }
 },
 {
   "model": "floppas.message",
-  "pk": 13,
+  "pk": 4,
   "fields": {
-    "text": "Yo",
-    "parent_chat": 4,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 4
-  }
-},
-{
-  "model": "floppas.message",
-  "pk": 14,
-  "fields": {
-    "text": "greetings",
-    "parent_chat": 5,
-    "created_at": "2021-10-08T23:00:00Z",
-    "sender": 5
+    "text": "yo",
+    "parent_chat": 3,
+    "created_at": "2024-03-20T21:47:34.630Z",
+    "sender": 8
   }
 }
 ]
