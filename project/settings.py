@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-import django_on_heroku
+# import django_on_heroku
 from dotenv import load_dotenv
 import dj_database_url
 load_dotenv()
@@ -33,7 +33,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if str(os.getenv('ENVIRONMENT')) == 'development' else False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -141,7 +141,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {  
+REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'djangorestframework_camel_case.render.CamelCaseJSONRenderer',
         'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
@@ -156,4 +156,4 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'jwt_auth.User'
 
-django_on_heroku.settings(locals())
+# django_on_heroku.settings(locals())
