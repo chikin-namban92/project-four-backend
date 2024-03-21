@@ -16,7 +16,6 @@ django-on-heroku = "*"
 django-cors-headers = "*"
 
 [dev-packages]
-awsebcli = "*"
 
 [requires]
 python_version = "3.8"
