@@ -33,7 +33,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if str(os.getenv('ENVIRONMENT')) == 'development' else False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['find-floppas-dev.eu-west-2.elasticbeanstalk.com']
 
 # Application definition
 
