@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 # import django_on_heroku
 from dotenv import load_dotenv
-# import dj_database_url
+import dj_database_url
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -86,23 +86,24 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'find-floppas-db',
-        'HOST': 'localhost',
-        'PORT': 5432
-    }
-}
-# if str(os.getenv('ENVIRONMENT')) == 'development':
-#     DATABASES['default'] =  {
+# DATABASES = {
+#     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': 'find-floppas-db',
 #         'HOST': 'localhost',
 #         'PORT': 5432
 #     }
-# else:
-#     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# }
+DATABASES = {}
+if str(os.getenv('ENVIRONMENT')) == 'development':
+    DATABASES['default'] =  {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'find-floppas-db',
+        'HOST': 'localhost',
+        'PORT': 5432
+    }
+else:
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
